@@ -1,0 +1,31 @@
+# Compiled binaries
+*.exe
+*.o
+*.out
+a.out
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.python-version
+
+# Virtual environments / local config
+.env
+.venv/
+venv/
+env/
+
+# Build directories
+build/
+bin/
+
+# IDE files
+.vscode/
+.idea/
+*.user
+
+# OS files
+.DS_Store
+Thumbs.db
