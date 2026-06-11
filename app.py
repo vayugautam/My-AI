@@ -8,6 +8,7 @@ import threading
 import time
 import urllib.request
 import re
+import os
 from urllib.parse import urlparse, parse_qs
 
 # =====================================================================
@@ -942,10 +943,11 @@ if __name__ == "__main__":
     if ollama_up:
         print(f"  embed model: {ollama.embedModel}  gen model: {ollama.genModel}")
 
-    server_address = ("", 8080)
+    port = int(os.environ.get("PORT", 8080))
+    server_address = ("", port)
     try:
         with ThreadedHTTPServer(server_address, VectorDBRequestHandler) as httpd:
-            print("Python server listening on port 8080...")
+            print(f"Python server listening on port {port}...")
             httpd.serve_forever()
     except KeyboardInterrupt:
         print("\nShutting down server...")
